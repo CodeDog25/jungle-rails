@@ -28,5 +28,10 @@
     </ul>
     <p class="text-center text-muted">© 2021 Jungle, Inc</p>
   </footer>
+  <% if current_user %>
+    Signed in as <%= current_user&.name %> | <%= link_to "Logout", '/logout' %>
+  <% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  <% end %>
 </body>
 </html>
